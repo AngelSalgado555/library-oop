@@ -3,22 +3,22 @@ package org.ies.library.model;
 import java.util.Objects;
 
 public class Author {
-    private int NIF;
+    private String nif;
     private String name;
     private String surname;
 
-    public Author(int NIF, String name, String surname) {
-        this.NIF = NIF;
+    public Author(String NIF, String name, String surname) {
+        this.nif = NIF;
         this.name = name;
         this.surname = surname;
     }
 
-    public int getNIF() {
-        return NIF;
+    public String getNif() {
+        return nif;
     }
 
-    public void setNIF(int NIF) {
-        this.NIF = NIF;
+    public void setNif(String nif) {
+        this.nif = nif;
     }
 
     public String getName() {
@@ -42,18 +42,18 @@ public class Author {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Author autor = (Author) o;
-        return NIF == autor.NIF && Objects.equals(name, autor.name) && Objects.equals(surname, autor.surname);
+        return nif == autor.nif && Objects.equals(name, autor.name) && Objects.equals(surname, autor.surname);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(NIF, name, surname);
+        return Objects.hash(nif, name, surname);
     }
 
     @Override
     public String toString() {
         return "Autor{" +
-                "NIF=" + NIF +
+                "NIF=" + nif +
                 ", name='" + name + '\'' +
                 ", surname='" + surname + '\'' +
                 '}';
